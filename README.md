@@ -9,9 +9,11 @@ If you are using Windows 10 or Mac os, please make sure you give at least half o
 I have eight cores processors and 32 GB of Ram. So I gave six cores and 16 GB ram space to the docker hub.
 
 Step 3: pull the Docker image using
+
 docker pull sandipanghosh/spark3_hadoop3:latest
 
 Step 4: Run the image using 
+
 docker container run -it -v /host_path/docker_data/:/root/docker_data --name spark3 -p 8080:8080 -p4040:4040 spark3_hadoop3:latest /bin/bash
 
 Here we are running the spark3_hadoop3 image and mounting a local dir called 'docer_data' to the container's location /root/docker_data.
@@ -22,8 +24,11 @@ Step 5: Once you login to the container, you need to run the spark master comman
 
 cd $SPARK_HOME
 ./sbin/start-master.sh
+
 Once the master start running, you can log in to the master node using.
+
 http://localhost:8080
+
 From this page note down the URL. We need this url for creating the worker nodes.
 My URL: spark://a913f8caa9b2:7077
 
